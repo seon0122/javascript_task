@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>구구단 2단</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        main {
+            /* background: yellow; */
+            width:1000px; height: 900px; margin:0 auto;
+            padding-top:80px;
+            /* border:3px solid #222; */
+        }
+        h1 {
+            width: 500px; margin: 0 auto;
+            font-size: 3.5rem; font-weight: 800; letter-spacing: 0.07em;
+            text-align: center;
+        }
+        .dan2_wrap {
+            /* background: pink; */
+            display: flex; flex-flow: row nowrap; /* justify-content: center; align-items: center; */
+            padding:80px 0;
+        }
+        .dan2_wrap img {
+            width:300px; height:400px;
+        }
+        .dan2_wrap .gugudan {
+            /* background: aqua; */
+            margin: 0 80px;
+            padding: 30px 0;
+            font-size: 2.1rem;
+            display: flex;
+            flex-flow: row wrap;
+            width: calc(60% - 60px / 3);
+            align-items: end;
+            height: 100%;
+        }
+        .dan2_wrap .gugudan input {
+            /* background: aquamarine; */
+            width: 45px; height: 40px; margin-right: 30px; margin-left:5px;
+            border:1px solid #222;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>2단 구구단</h1>
+        <div class="dan2_wrap">
+            <img src="./images/22.jpeg" alt="">
+            <div class="gugudan">
+                2 X 1 = <input type="number" id="result1"><br><br>
+                2 X 2 = <input type="number" id="result2"><br><br>
+                2 X 3 = <input type="number" id="result3"><br><br>
+                2 X 4 = <input type="number" id="result4"><br><br>
+                2 X 5 = <input type="number" id="result5"><br><br>
+                2 X 6 = <input type="number" id="result6"><br><br>
+                2 X 7 = <input type="number" id="result7"><br><br>
+                2 X 8 = <input type="number" id="result8"><br><br>
+                2 X 9 = <input type="number" id="result9">
+            </div>
+        </div>
+    </main>
+    <script>
+        const result1 = document.querySelector('#result1')
+        const result2 = document.querySelector('#result2')
+        const result3 = document.querySelector('#result3')
+        const result4 = document.querySelector('#result4')
+        const result5 = document.querySelector('#result5')
+        const result6 = document.querySelector('#result6')
+        const result7 = document.querySelector('#result7')
+        const result8 = document.querySelector('#result8')
+        const result9 = document.querySelector('#result9')
+        console.log(result1, result2, result3, result4, result5, result6, result7, result8, result9)
+    </script>
+</body>
+</html>
