@@ -31,7 +31,6 @@
         main .scale_wrap h2 {
             font-size:1.5rem; font-weight:600; margin-top: 50px;
         }
-        main .scale_wrap p {}
         main .scale_wrap p input {width:60px; text-align: end; padding:5px 10px;}
         main .scale_wrap p:nth-child(2) {margin-left:18px;}
         main .scale_wrap #result_btn,
@@ -40,7 +39,6 @@
             margin-bottom: 0; background-color: #e9e8e8;
         }
         main .scale_wrap #result_btn {margin-right:10px;}
-        main .scale_wrap #reset_btn {}
         main .scale_wrap .hidden_txt {font-size:1.2rem; font-style: italic; display: none; margin-top:20px;}
         main .scale_wrap p span {font-size:1.2rem; font-style: italic;}
         </style>
@@ -69,23 +67,23 @@
         const userHeight = parseFloat(document.querySelector("#userHeight").value);
         const userWeight = parseFloat(document.querySelector("#userWeight").value);
 
-        // 입력 값이 유효한지 체크
+        // 입력 오류 시 팝업창
         if (isNaN(userHeight) || isNaN(userWeight)) {
             window.alert("키와 체중을 숫자로 입력해주세요.");
 
-            // 오류가 있을 경우 hidden_txt를 숨김
+            // 팝업창 생성 시 hidden_txt를 숨김
             hidden_txt.style.display = 'none';
             return;
         }
 
-        // 입력 값이 유효한 경우 결과 계산 및 표시
+        // 결과 표시
         const normal_w = (userHeight - 100) * 0.9;
         const overweight = userWeight - normal_w;
 
         document.querySelector(".normal_w").textContent = Math.floor(normal_w) + "kg";
         document.querySelector(".over_w").textContent = (overweight > 0 ? Math.floor(overweight) : "0") + "kg";
 
-        // 결과를 보여주기 위해 hidden_txt를 보이게 함
+        // hidden_txt를 보이게 함
         hidden_txt.style.display = 'block';
     });
 
