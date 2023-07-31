@@ -6,74 +6,82 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>구구단 2단</title>
-    <link rel="stylesheet" href="./styles/reset.css">
     <style>
-        main {
-            /* background: yellow; */
-            width:1000px; height: 900px; margin:0 auto;
-            padding-top:80px;
-            /* border:3px solid #222; */
+        body {
+            width: 1000px;  height: 950px;
+            margin:0 auto; padding:30px 0; 
+            border:5px dashed #ff9a9a; border-radius:30px;
         }
-        h1 {
-            width: 500px; margin: 0 auto;
-            font-size: 3.5rem; font-weight: 800; letter-spacing: 0.07em;
-            text-align: center;
+        .title {
+            display: flex; flex-flow: row nowrap;
+            align-items: baseline; justify-content: center;
         }
-        .dan2_wrap {
-            /* background: pink; */
-            display: flex; flex-flow: row nowrap; /* justify-content: center; align-items: center; */
-            padding:80px 0;
+        .title h1 {
+            font-size:3.5rem; margin-right:50px; color:#ff3f3f;
         }
-        .dan2_wrap img {
-            width:300px; height:400px;
+        .title img {
+            width:100px; height:150px;
         }
-        .dan2_wrap .gugudan {
-            /* background: aqua; */
-            margin: 0 80px;
-            padding: 30px 0;
-            font-size: 2.1rem;
-            display: flex;
-            flex-flow: row wrap;
-            width: calc(60% - 60px / 3);
-            align-items: end;
-            height: 100%;
+        .dan2_box {
+            text-align: center; border: none; padding-bottom: 30px;
         }
-        .dan2_wrap .gugudan input {
-            /* background: aquamarine; */
-            width: 45px; height: 40px; margin-right: 30px; margin-left:5px;
-            border:1px solid #222;
+        input {text-align: center;}
+        .gugudan * {
+            width: 150px;
+            font-size: 2.2rem; font-weight: 600; 
         }
+        .gugudan {margin-left: 320px;}
+        h2 {margin-left:150px;}
+        h2 img {width:40px; height:40px; rotate:90deg;}
     </style>
 </head>
 <body>
-    <main>
-        <h1>2단 구구단</h1>
-        <div class="dan2_wrap">
-            <img src="./images/22.jpeg" alt="">
-            <div class="gugudan">
-                2 X 1 = <input type="number" id="result1"><br><br>
-                2 X 2 = <input type="number" id="result2"><br><br>
-                2 X 3 = <input type="number" id="result3"><br><br>
-                2 X 4 = <input type="number" id="result4"><br><br>
-                2 X 5 = <input type="number" id="result5"><br><br>
-                2 X 6 = <input type="number" id="result6"><br><br>
-                2 X 7 = <input type="number" id="result7"><br><br>
-                2 X 8 = <input type="number" id="result8"><br><br>
-                2 X 9 = <input type="number" id="result9">
-            </div>
-        </div>
-    </main>
+    <div class="title"><h1>구구단 2단 학습하기</h1><img src="./images/22.jpeg" alt=""></div>
+    <h2>마우스를 올려보세요<img src="./images/point.png" alt=""></h2>
+    <div class="gugudan">
+        <input type="text" class="dan2_box" id="dan2_1" value="2 X 1"> = <input type="text" id="result1"><br>
+        <input type="text" class="dan2_box" id="dan2_2" value="2 X 2"> = <input type="text" id="result2"><br>
+        <input type="text" class="dan2_box" id="dan2_3" value="2 X 3"> = <input type="text" id="result3"><br>
+        <input type="text" class="dan2_box" id="dan2_4" value="2 X 4"> = <input type="text" id="result4"><br>
+        <input type="text" class="dan2_box" id="dan2_5" value="2 X 5"> = <input type="text" id="result5"><br>
+        <input type="text" class="dan2_box" id="dan2_6" value="2 X 6"> = <input type="text" id="result6"><br>
+        <input type="text" class="dan2_box" id="dan2_7" value="2 X 7"> = <input type="text" id="result7"><br>
+        <input type="text" class="dan2_box" id="dan2_8" value="2 X 8"> = <input type="text" id="result8"><br>
+        <input type="text" class="dan2_box" id="dan2_9" value="2 X 9"> = <input type="text" id="result9">
+    </div>
     <script>
+        const gugudan = document.querySelector('.gugudan')
+        const dan2_box = document.querySelector('.dan2_box')
         const result1 = document.querySelector('#result1')
-        const result2 = document.querySelector('#result2')
-        const result3 = document.querySelector('#result3')
-        const result4 = document.querySelector('#result4')
-        const result5 = document.querySelector('#result5')
-        const result6 = document.querySelector('#result6')
-        const result7 = document.querySelector('#result7')
-        const result8 = document.querySelector('#result8')
-        const result9 = document.querySelector('#result9')
-        console.log(result1, result2, result3, result4, result5, result6, result7, result8, result9)
+        const dan2_1 = document.querySelector('#dan2_1')
+        console.log(dan2_box, result1,dan2_1, gugudan)
+        dan2_1.addEventListener('mouseover',function(){
+            result1.value = `${2*1}`
+        })
+        dan2_2.addEventListener('mouseover',function(){
+            result2.value = `${2*2}`
+        })
+        dan2_3.addEventListener('mouseover',function(){
+            result3.value = `${2*3}`
+        })
+        dan2_4.addEventListener('mouseover',function(){
+            result4.value = `${2*4}`
+        })
+        dan2_5.addEventListener('mouseover',function(){
+            result5.value = `${2*5}`
+        })
+        dan2_6.addEventListener('mouseover',function(){
+            result6.value = `${2*6}`
+        })
+        dan2_7.addEventListener('mouseover',function(){
+            result7.value = `${2*7}`
+        })
+        dan2_8.addEventListener('mouseover',function(){
+            result8.value = `${2*8}`
+        })
+        dan2_9.addEventListener('mouseover',function(){
+            result9.value = `${2*9}`
+        })
     </script>
 </body>
 </html>
